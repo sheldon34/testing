@@ -54,8 +54,10 @@ public class StudentController   {
     }
     @PatchMapping("/update/{id}")
 
-    public ResponseEntity<StudentDto> updateStudent (@RequestBody @PathVariable("id")
-                                                         @Valid Long StudentId, StudentDto updatedStudentDto){
+    public ResponseEntity<StudentDto> updateStudent (
+            @RequestBody
+            @PathVariable("id")
+            @Valid Long StudentId, StudentDto updatedStudentDto){
         StudentDto studentDto=studentService.updateStudent(StudentId,updatedStudentDto);
         return ResponseEntity.ok(studentDto);
     }
